@@ -23,10 +23,10 @@ public class Main {
         try {
             String creature = creaturesMap.get(input);
             if(creaturesMap.get(input) ==  null) {
-                throw new NullPointerException();
+                throw new IllegalArgumentException();
         }
             System.out.println(input + "の代表的生物は" + creature + "です");
-        } catch (NullPointerException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(input + "に該当する生物は未登録です");
         }
     }
