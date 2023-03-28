@@ -1,11 +1,12 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
 public class Main {
     /*例外処理を実行する為のコード*/
     public static void main(String[] args) {
 
-        Map< String,String> creaturesMap = new HashMap<>();
+        Map<String, String> creaturesMap = new HashMap<>();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -22,9 +23,9 @@ public class Main {
           ・Mapからキーと値の両方を取得し出力する**/
         try {
             String creature = creaturesMap.get(input);
-            if(creaturesMap.get(input) ==  null) {
+            if (creaturesMap.get(input) == null) {
                 throw new IllegalArgumentException();
-        }
+            }
             System.out.println(input + "の代表的生物は" + creature + "です");
         } catch (IllegalArgumentException e) {
             System.out.println(input + "に該当する生物は未登録です");
