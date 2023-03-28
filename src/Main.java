@@ -23,7 +23,7 @@ public class Main {
           ・Mapからキーと値の両方を取得し出力する**/
         try {
             String creature = creaturesMap.get(input);
-            if (creaturesMap.get(input) == null) {
+            if (creature == null) {
                 throw new IllegalArgumentException();
             }
             System.out.println(input + "の代表的生物は" + creature + "です");
