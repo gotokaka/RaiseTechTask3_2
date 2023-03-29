@@ -3,7 +3,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    /*例外処理を実行する為のコード*/
+    /*Mapクラスの作成*/
     public static void main(String[] args) {
 
         Map<String, String> creaturesMap = new HashMap<>();
@@ -18,12 +18,10 @@ public class Main {
         System.out.print("分類を入力：");
         String input = scanner.next();
 
-        /*例外処理をする
-          ・try-catch文とthrow文の組み合わせ
-          ・Mapからキーと値の両方を取得し出力する**/
+        /*例外処理をする*/
         try {
             String creature = creaturesMap.get(input);
-            if (creature == null) {
+            if (creature.equals(null)) {
                 throw new IllegalArgumentException();
             }
             System.out.println(input + "の代表的生物は" + creature + "です");
