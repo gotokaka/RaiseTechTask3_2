@@ -22,10 +22,10 @@ public class Main {
         try {
             String creature = creaturesMap.get(input);
             if (creature.equals(null)) {
-                throw new IllegalArgumentException();
+                throw new Exception();
             }
             System.out.println(input + "の代表的生物は" + creature + "です");
-        } catch (IllegalArgumentException e) {
+        } catch (Exception e) {
             System.out.println(input + "に該当する生物は未登録です");
         }
     }
