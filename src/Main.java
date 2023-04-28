@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
@@ -19,14 +20,13 @@ public class Main {
         String input = scanner.next();
 
         /*例外処理をする*/
-        try {
-            String creature = creaturesMap.get(input);
-            if (creature.equals(null)) {
-                throw new Exception();
-            }
-            System.out.println(input + "の代表的生物は" + creature + "です");
-        } catch (Exception e) {
-            System.out.println(input + "に該当する生物は未登録です");
+        String creature = creaturesMap.get(input);
+
+        if (Objects.isNull(creature)) {
+            System.out.println("その分類は存在しません");
+            return;
         }
+
+        System.out.println(input + "の代表的生物は" + creature + "です");
     }
 }
